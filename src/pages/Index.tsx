@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ArrowRight, Users, Calendar, BookOpen, Shield, Sparkles, Heart } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -40,29 +41,29 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 gradient-hero" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/60 text-accent-foreground text-sm font-medium mb-6 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               <Sparkles className="w-4 h-4" />
               Compassionate Mental Health Care
             </div>
             
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
               Your Journey to
               <span className="text-primary block mt-2">Mental Wellness</span>
               Starts Here
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-up opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
               We provide compassionate therapy, transformative events, and a supportive community to help you thrive. Take the first step towards a healthier mind.
             </p>
             
-            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-wrap gap-4 animate-fade-up opacity-0" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
               <Link to="/services">
                 <Button variant="hero" size="lg">
                   Explore Services
@@ -80,7 +81,7 @@ const Index = () => {
 
         {/* Floating decorative elements */}
         <div className="absolute right-10 top-1/4 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-float" />
-        <div className="absolute right-1/4 bottom-1/4 w-48 h-48 rounded-full bg-accent/30 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute right-1/4 bottom-1/4 w-48 h-48 rounded-full bg-accent/40 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
       </section>
 
       {/* Stats Section */}
@@ -88,12 +89,14 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-semibold text-primary mb-2">
-                  {stat.value}
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="text-center">
+                  <div className="font-display text-3xl md:text-4xl font-semibold text-primary mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-muted-foreground text-sm">{stat.label}</div>
                 </div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -102,59 +105,68 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              How We Support You
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our comprehensive approach to mental wellness combines professional therapy, community support, and educational resources.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+                How We Support You
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our comprehensive approach to mental wellness combines professional therapy, community support, and educational resources.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="group p-8 rounded-2xl bg-card border border-border hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground" />
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="group p-8 rounded-2xl bg-card border border-border card-hover h-full">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <Heart className="w-12 h-12 text-primary-foreground/80 mx-auto mb-6" />
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground mb-4">
-            Ready to Begin Your Healing Journey?
-          </h2>
-          <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-            Join thousands who have found support, growth, and healing with MindfulPath. Your well-being matters.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/services">
-              <Button variant="secondary" size="lg">
-                Book a Session
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </Link>
-            <Link to="/volunteer">
-              <Button variant="ghost" size="lg" className="text-primary-foreground hover:bg-primary-foreground/10">
-                Volunteer With Us
-              </Button>
-            </Link>
-          </div>
+      <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
+        {/* Decorative background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-white blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white blur-3xl" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <ScrollReveal>
+            <Heart className="w-12 h-12 text-primary-foreground/80 mx-auto mb-6 animate-float" />
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground mb-4">
+              Ready to Begin Your Healing Journey?
+            </h2>
+            <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+              Join thousands who have found support, growth, and healing with MindfulPath. Your well-being matters.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/services">
+                <Button variant="secondary" size="lg" className="shadow-elevated hover:shadow-soft">
+                  Book a Session
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
+              <Link to="/volunteer">
+                <Button variant="ghost" size="lg" className="text-primary-foreground border-2 border-primary-foreground/30 hover:bg-primary-foreground/10">
+                  Volunteer With Us
+                </Button>
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
