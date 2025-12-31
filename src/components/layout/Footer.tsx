@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { forwardRef } from "react";
 
-export const Footer = () => {
+export const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer ref={ref} className="bg-card border-t border-border">
       {/* Contact Section */}
       <section id="contact" className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -17,9 +18,9 @@ export const Footer = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-background shadow-soft">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
-                <Mail className="w-5 h-5 text-primary" />
+            <div className="group flex flex-col items-center text-center p-6 rounded-2xl bg-background shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
               <a href="mailto:hello@mindfulpath.com" className="text-muted-foreground hover:text-primary transition-colors">
@@ -27,9 +28,9 @@ export const Footer = () => {
               </a>
             </div>
 
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-background shadow-soft">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
-                <Phone className="w-5 h-5 text-primary" />
+            <div className="group flex flex-col items-center text-center p-6 rounded-2xl bg-background shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
               <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
@@ -37,9 +38,9 @@ export const Footer = () => {
               </a>
             </div>
 
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-background shadow-soft">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
-                <MapPin className="w-5 h-5 text-primary" />
+            <div className="group flex flex-col items-center text-center p-6 rounded-2xl bg-background shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <MapPin className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Visit Us</h3>
               <p className="text-muted-foreground">
@@ -55,8 +56,8 @@ export const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-1">
-              <Link to="/" className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+              <Link to="/" className="flex items-center gap-2 mb-4 group">
+                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover:scale-105 transition-transform">
                   <Heart className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <span className="font-display text-xl font-semibold text-foreground">
@@ -71,7 +72,7 @@ export const Footer = () => {
                   <a
                     key={i}
                     href="#"
-                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                    className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -102,7 +103,7 @@ export const Footer = () => {
               <h4 className="font-semibold text-foreground mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li><Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
-                <li><Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link></li>
+                <li><Link to="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms & Conditions</Link></li>
               </ul>
             </div>
           </div>
@@ -116,4 +117,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
