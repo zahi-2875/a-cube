@@ -151,7 +151,7 @@ const Index = () => {
               Ready to Begin Your Healing Journey?
             </h2>
             <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-              Join thousands who have found support, growth, and healing with MindfulPath. Your well-being matters.
+              Join thousands who have found support, growth, and healing with A-Cube. Your well-being matters.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/services">

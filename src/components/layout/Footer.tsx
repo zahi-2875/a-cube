@@ -23,8 +23,8 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
-              <a href="mailto:hello@mindfulpath.com" className="text-muted-foreground hover:text-primary transition-colors">
-                hello@mindfulpath.com
+              <a href="mailto:hello@a-cube.com" className="text-muted-foreground hover:text-primary transition-colors">
+                hello@a-cube.com
               </a>
             </div>
 
@@ -61,7 +61,7 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
                   <Heart className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <span className="font-display text-xl font-semibold text-foreground">
-                  MindfulPath
+                  A-Cube
                 </span>
               </Link>
               <p className="text-muted-foreground text-sm mb-6">
@@ -110,7 +110,7 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           <div className="border-t border-border mt-12 pt-8 text-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} MindfulPath. All rights reserved.
+              © {new Date().getFullYear()} A-Cube. All rights reserved.
             </p>
           </div>
         </div>
