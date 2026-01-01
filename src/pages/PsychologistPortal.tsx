@@ -35,19 +35,27 @@ const PsychologistPortal = () => {
     <Layout showFooter={false}>
       <div className="min-h-[calc(100vh-5rem)] flex">
         {/* Left Panel - Features */}
-        <div className="hidden lg:flex lg:w-1/2 bg-primary p-12 flex-col justify-center">
-          <div className="max-w-md">
-            <h2 className="font-display text-3xl font-semibold text-primary-foreground mb-6">
+        <div className="hidden lg:flex lg:w-1/2 bg-primary p-12 flex-col justify-center relative overflow-hidden">
+          {/* Background decorative elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          
+          <div className="max-w-md relative z-10">
+            <h2 className="font-display text-3xl font-semibold text-primary-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               Psychologist Portal
             </h2>
-            <p className="text-primary-foreground/80 mb-12">
+            <p className="text-primary-foreground/80 mb-12 animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
               Access your personalized dashboard to manage sessions, connect with clients, and grow your practice with A-Cube.
             </p>
 
             <div className="space-y-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
+                <div 
+                  key={index} 
+                  className="flex items-start gap-4 animate-fade-up opacity-0"
+                  style={{ animationDelay: `${0.2 + index * 0.1}s`, animationFillMode: "forwards" }}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-105">
                     <feature.icon className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
@@ -66,7 +74,7 @@ const PsychologistPortal = () => {
 
         {/* Right Panel - Auth Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
-          <div className="w-full max-w-md">
+          <div className="w-full max-w-md animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
             <div className="text-center mb-8">
               <h1 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
                 {isLogin ? "Welcome Back" : "Create Your Profile"}
@@ -83,11 +91,11 @@ const PsychologistPortal = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input id="firstName" placeholder="John" className="transition-all duration-200" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Input id="lastName" placeholder="Doe" className="transition-all duration-200" />
                   </div>
                 </div>
               )}
@@ -96,7 +104,7 @@ const PsychologistPortal = () => {
                 <Label htmlFor="email">Email Address</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <Input id="email" type="email" placeholder="you@example.com" className="pl-10" />
+                  <Input id="email" type="email" placeholder="you@example.com" className="pl-10 transition-all duration-200" />
                 </div>
               </div>
 
@@ -104,7 +112,7 @@ const PsychologistPortal = () => {
                 <Label htmlFor="password">Password</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <Input id="password" type="password" placeholder="••••••••" className="pl-10" />
+                  <Input id="password" type="password" placeholder="••••••••" className="pl-10 transition-all duration-200" />
                 </div>
               </div>
 
@@ -112,11 +120,11 @@ const PsychologistPortal = () => {
                 <>
                   <div className="space-y-2">
                     <Label htmlFor="license">License Number</Label>
-                    <Input id="license" placeholder="PSY-XXXXXX" />
+                    <Input id="license" placeholder="PSY-XXXXXX" className="transition-all duration-200" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="specialty">Specialty</Label>
-                    <Input id="specialty" placeholder="e.g., Cognitive Behavioral Therapy" />
+                    <Input id="specialty" placeholder="e.g., Cognitive Behavioral Therapy" className="transition-all duration-200" />
                   </div>
                 </>
               )}
@@ -131,7 +139,7 @@ const PsychologistPortal = () => {
               <button
                 type="button"
                 onClick={() => setIsLogin(!isLogin)}
-                className="text-sm text-primary hover:underline"
+                className="text-sm text-primary hover:underline transition-colors duration-200"
               >
                 {isLogin
                   ? "Don't have an account? Register here"
@@ -140,7 +148,7 @@ const PsychologistPortal = () => {
             </div>
 
             {isLogin && (
-              <div className="mt-8 p-4 rounded-xl bg-muted/50 border border-border">
+              <div className="mt-8 p-4 rounded-xl bg-muted/50 border border-border animate-fade-in">
                 <p className="text-sm text-muted-foreground text-center">
                   <strong>Demo Access:</strong> This is a preview of the psychologist portal. 
                   Full functionality requires backend integration.
