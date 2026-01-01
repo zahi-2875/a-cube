@@ -41,7 +41,7 @@ const PsychologistPortal = () => {
               Psychologist Portal
             </h2>
             <p className="text-primary-foreground/80 mb-12">
-              Access your personalized dashboard to manage sessions, connect with clients, and grow your practice with MindfulPath.
+              Access your personalized dashboard to manage sessions, connect with clients, and grow your practice with A-Cube.
             </p>
 
             <div className="space-y-6">

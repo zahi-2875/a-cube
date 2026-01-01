@@ -154,7 +154,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Why Choose MindfulPath?
+              Why Choose A-Cube?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We prioritize your comfort and convenience to make therapy accessible and effective.

@@ -20,7 +20,7 @@ const Privacy = () => {
                     Introduction
                   </h2>
                   <p className="text-muted-foreground leading-relaxed">
-                    At MindfulPath, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services, website, and applications.
+                    At A-Cube, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services, website, and applications.
                   </p>
                 </section>
 
@@ -107,8 +107,8 @@ const Privacy = () => {
                     If you have any questions about this Privacy Policy or our data practices, please contact us at:
                   </p>
                   <div className="mt-4 p-6 rounded-xl bg-card border border-border">
-                    <p className="text-foreground font-medium">MindfulPath Privacy Team</p>
-                    <p className="text-muted-foreground">Email: privacy@mindfulpath.com</p>
+                    <p className="text-foreground font-medium">A-Cube Privacy Team</p>
+                    <p className="text-muted-foreground">Email: privacy@a-cube.com</p>
                     <p className="text-muted-foreground">Phone: +1 (234) 567-890</p>
                     <p className="text-muted-foreground">Address: 123 Wellness Street, San Francisco, CA 94102</p>
                   </div>
