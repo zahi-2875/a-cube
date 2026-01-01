@@ -105,12 +105,28 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+  }
+
+  /* Smooth focus transitions */
+  input, textarea, select, button {
+    @apply transition-all duration-200;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    @apply ring-2 ring-primary/30 outline-none;
   }
 }
 
@@ -172,12 +188,13 @@
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
 
-  /* Hover effects */
+  /* Hover effects - hardware accelerated */
   .hover-lift {
-    @apply transition-all duration-300;
+    @apply transition-all duration-300 ease-out;
+    will-change: transform;
   }
   .hover-lift:hover {
-    @apply -translate-y-1;
+    transform: translateY(-4px) translateZ(0);
     box-shadow: var(--shadow-elevated);
   }
 
@@ -185,32 +202,71 @@
     box-shadow: var(--shadow-glow);
   }
 
-  /* Card hover with orange accent */
+  /* Card hover with orange accent - optimized */
   .card-hover {
-    @apply transition-all duration-300;
+    @apply transition-all duration-300 ease-out;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
   }
   .card-hover:hover {
-    @apply -translate-y-1 border-primary/30;
+    transform: translateY(-4px) translateZ(0);
+    border-color: hsl(var(--primary) / 0.3);
     box-shadow: var(--shadow-elevated);
   }
 
-  /* Button micro-interactions */
-  .btn-press {
-    @apply transition-transform duration-150;
+  /* Image hover zoom effect */
+  .img-hover-zoom {
+    overflow: hidden;
   }
-  .btn-press:active {
-    @apply scale-95;
+  .img-hover-zoom img {
+    @apply transition-transform duration-500 ease-out;
+    will-change: transform;
+  }
+  .img-hover-zoom:hover img {
+    transform: scale(1.05);
   }
 
-  /* Scroll reveal base state (use with JS) */
+  /* Button micro-interactions - optimized */
+  .btn-press {
+    @apply transition-transform duration-150 ease-out;
+    will-change: transform;
+  }
+  .btn-press:active {
+    transform: scale(0.97);
+  }
+
+  /* Scroll reveal base state - optimized for 60fps */
   .scroll-reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(24px) translateZ(0);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+    backface-visibility: hidden;
   }
   .scroll-reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
+  }
+
+  /* Staggered reveal for lists */
+  .stagger-reveal > * {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: staggerFadeUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  .stagger-reveal > *:nth-child(1) { animation-delay: 0.05s; }
+  .stagger-reveal > *:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-reveal > *:nth-child(3) { animation-delay: 0.15s; }
+  .stagger-reveal > *:nth-child(4) { animation-delay: 0.2s; }
+  .stagger-reveal > *:nth-child(5) { animation-delay: 0.25s; }
+  .stagger-reveal > *:nth-child(6) { animation-delay: 0.3s; }
+
+  @keyframes staggerFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes pageIn {
@@ -278,19 +334,83 @@
     }
   }
 
-  /* Reduced motion support */
+  /* Modal/Dialog animations */
+  .modal-enter {
+    animation: modalIn 0.25s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  }
+  .modal-exit {
+    animation: modalOut 0.2s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  }
+
+  @keyframes modalIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96) translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes modalOut {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.96) translateY(8px);
+    }
+  }
+
+  /* Form feedback animations */
+  .input-success {
+    animation: inputSuccess 0.3s ease-out forwards;
+  }
+  .input-error {
+    animation: inputShake 0.4s ease-out;
+  }
+
+  @keyframes inputSuccess {
+    0% { border-color: hsl(var(--border)); }
+    50% { border-color: hsl(142 76% 36%); box-shadow: 0 0 0 3px hsl(142 76% 36% / 0.1); }
+    100% { border-color: hsl(var(--border)); }
+  }
+
+  @keyframes inputShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+  }
+
+  /* Reduced motion support - comprehensive */
   @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
     .animate-float,
     .animate-fade-up,
     .animate-fade-in,
     .animate-scale-in,
     .animate-slide-up,
     .page-transition,
-    .scroll-reveal {
-      animation: none;
-      opacity: 1;
-      transform: none;
-      transition: none;
+    .scroll-reveal,
+    .stagger-reveal > * {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .hover-lift:hover,
+    .card-hover:hover {
+      transform: none !important;
     }
   }
 }

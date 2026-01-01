@@ -1,12 +1,18 @@
-import { useEffect, useRef, useState, ReactNode } from "react";
+import { useEffect, useRef, useState, ReactNode, memo } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  threshold?: number;
 }
 
-export const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollRevealProps) => {
+export const ScrollReveal = memo(({ 
+  children, 
+  className = "", 
+  delay = 0,
+  threshold = 0.1 
+}: ScrollRevealProps) => {
   const [isRevealed, setIsRevealed] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -19,27 +25,33 @@ export const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollReve
       return;
     }
 
+    const element = ref.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setIsRevealed(true);
-          }, delay);
+          // Use requestAnimationFrame for smoother animation triggering
+          if (delay > 0) {
+            setTimeout(() => {
+              requestAnimationFrame(() => setIsRevealed(true));
+            }, delay);
+          } else {
+            requestAnimationFrame(() => setIsRevealed(true));
+          }
           observer.disconnect();
         }
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        threshold,
+        rootMargin: "0px 0px -40px 0px",
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
     return () => observer.disconnect();
-  }, [delay]);
+  }, [delay, threshold]);
 
   return (
     <div
@@ -49,4 +61,6 @@ export const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollReve
       {children}
     </div>
   );
-};
+});
+
+ScrollReveal.displayName = "ScrollReveal";

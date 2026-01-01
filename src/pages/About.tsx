@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
 import { Users, Target, Heart, Award, ArrowRight } from "lucide-react";
 
@@ -65,10 +66,10 @@ const About = () => {
       <section className="py-20 md:py-28 gradient-hero">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               About A-Cube
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
               We are a dedicated team of mental health professionals committed to making quality psychological care accessible to everyone. Our mission is to destigmatize mental health and create a world where seeking help is celebrated.
             </p>
           </div>
@@ -79,35 +80,36 @@ const About = () => {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-                Our Mission
-              </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                At A-Cube, we believe that mental wellness is fundamental to living a fulfilling life. Our mission is to provide compassionate, accessible, and evidence-based mental health services that empower individuals to overcome challenges and thrive.
-              </p>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Founded in 2018, we have grown from a small practice to a comprehensive mental health platform, serving thousands of individuals through therapy, community events, and educational resources.
-              </p>
-              <Link to="/services">
-                <Button variant="hero">
-                  Explore Our Services
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
+            <ScrollReveal>
+              <div>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  At A-Cube, we believe that mental wellness is fundamental to living a fulfilling life. Our mission is to provide compassionate, accessible, and evidence-based mental health services that empower individuals to overcome challenges and thrive.
+                </p>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Founded in 2018, we have grown from a small practice to a comprehensive mental health platform, serving thousands of individuals through therapy, community events, and educational resources.
+                </p>
+                <Link to="/services">
+                  <Button variant="hero">
+                    Explore Our Services
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </ScrollReveal>
             <div className="grid grid-cols-2 gap-4">
               {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="p-6 rounded-2xl bg-card border border-border hover:shadow-soft transition-shadow"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4">
-                    <value.icon className="w-5 h-5 text-primary" />
+                <ScrollReveal key={index} delay={index * 80}>
+                  <div className="p-6 rounded-2xl bg-card border border-border card-hover h-full">
+                    <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4">
+                      <value.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
+                    <p className="text-sm text-muted-foreground">{value.description}</p>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -117,30 +119,31 @@ const About = () => {
       {/* Team Section */}
       <section className="py-20 md:py-28 bg-card border-y border-border">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Meet Our Team
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our team of licensed professionals brings decades of combined experience in mental health care.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+                Meet Our Team
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Our team of licensed professionals brings decades of combined experience in mental health care.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-2xl bg-background border border-border text-center hover:shadow-elevated transition-all hover:-translate-y-1"
-              >
-                <div className="w-20 h-20 rounded-full bg-accent mx-auto mb-4 flex items-center justify-center">
-                  <span className="font-display text-2xl text-primary">
-                    {member.name.split(" ").map(n => n[0]).join("")}
-                  </span>
+              <ScrollReveal key={index} delay={index * 80}>
+                <div className="group p-6 rounded-2xl bg-background border border-border text-center card-hover h-full">
+                  <div className="w-20 h-20 rounded-full bg-accent mx-auto mb-4 flex items-center justify-center overflow-hidden group-hover:ring-2 group-hover:ring-primary/30 transition-all duration-300">
+                    <span className="font-display text-2xl text-primary">
+                      {member.name.split(" ").map(n => n[0]).join("")}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
+                  <p className="text-sm text-primary mb-3">{member.role}</p>
+                  <p className="text-sm text-muted-foreground">{member.bio}</p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-sm text-primary mb-3">{member.role}</p>
-                <p className="text-sm text-muted-foreground">{member.bio}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -150,37 +153,40 @@ const About = () => {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-                Events We Conduct
-              </h2>
-              <p className="text-muted-foreground">
-                We organize a variety of events to educate, connect, and support mental health awareness.
-              </p>
-            </div>
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
+                  Events We Conduct
+                </h2>
+                <p className="text-muted-foreground">
+                  We organize a variety of events to educate, connect, and support mental health awareness.
+                </p>
+              </div>
+            </ScrollReveal>
 
             <div className="grid md:grid-cols-2 gap-4">
               {events.map((event, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary font-semibold">{index + 1}</span>
+                <ScrollReveal key={index} delay={index * 60}>
+                  <div className="flex items-center gap-4 p-5 rounded-xl bg-card border border-border card-hover">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-primary font-semibold">{index + 1}</span>
+                    </div>
+                    <span className="text-foreground">{event}</span>
                   </div>
-                  <span className="text-foreground">{event}</span>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <Link to="/events">
-                <Button variant="outline" size="lg">
-                  View All Events
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
+            <ScrollReveal delay={400}>
+              <div className="text-center mt-12">
+                <Link to="/events">
+                  <Button variant="outline" size="lg">
+                    View All Events
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
