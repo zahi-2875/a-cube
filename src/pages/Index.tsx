@@ -48,14 +48,14 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full gradient-accent text-primary text-sm font-medium mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               <Sparkles className="w-4 h-4" />
               Compassionate Mental Health Care
             </div>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
               Your Journey to
-              <span className="text-primary block mt-2">Mental Wellness</span>
+              <span className="text-gradient block mt-2">Mental Wellness</span>
               Starts Here
             </h1>
             
@@ -85,13 +85,13 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-card border-y border-border">
+      <section className="py-16 gradient-card border-y border-border">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <ScrollReveal key={index} delay={index * 100}>
                 <div className="text-center">
-                  <div className="font-display text-3xl md:text-4xl font-semibold text-primary mb-2">
+                  <div className="font-display text-3xl md:text-4xl font-semibold text-gradient mb-2">
                     {stat.value}
                   </div>
                   <div className="text-muted-foreground text-sm">{stat.label}</div>
@@ -119,8 +119,8 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 100}>
-                <div className="group p-8 rounded-2xl bg-card border border-border card-hover h-full">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <div className="group p-8 rounded-2xl gradient-card border border-border card-hover h-full">
+                  <div className="w-14 h-14 rounded-xl gradient-accent flex items-center justify-center mb-6 group-hover:gradient-primary group-hover:scale-110 transition-all duration-300">
                     <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <h3 className="font-display text-xl font-semibold text-foreground mb-3">
@@ -137,11 +137,12 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-primary relative overflow-hidden">
+      <section className="py-20 md:py-28 gradient-cta relative overflow-hidden">
         {/* Decorative background */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-15">
           <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-white blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-white blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-white/50 blur-3xl" />
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
