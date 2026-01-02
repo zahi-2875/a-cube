@@ -41,10 +41,13 @@
 
     --radius: 0.75rem;
 
-    /* Custom tokens - calming with orange highlights */
-    --gradient-hero: linear-gradient(135deg, hsl(40 20% 98%) 0%, hsl(35 30% 96%) 50%, hsl(24 95% 53% / 0.05) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(40 20% 98%) 0%, hsl(40 15% 96%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(28 95% 58%) 100%);
+    /* Custom gradient tokens - smooth and elegant */
+    --gradient-hero: linear-gradient(135deg, hsl(40 25% 98%) 0%, hsl(35 35% 95%) 40%, hsl(30 40% 93%) 70%, hsl(24 60% 90% / 0.5) 100%);
+    --gradient-card: linear-gradient(165deg, hsl(40 25% 99%) 0%, hsl(35 30% 96%) 50%, hsl(30 35% 94%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(20 90% 48%) 50%, hsl(16 85% 45%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(28 95% 58%) 0%, hsl(24 95% 53%) 50%, hsl(20 90% 48%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(35 40% 96%) 0%, hsl(30 35% 93%) 50%, hsl(24 50% 90%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(35 35% 94%) 100%);
     --shadow-soft: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
     --shadow-elevated: 0 12px 40px -8px hsl(0 0% 0% / 0.12);
     --shadow-glow: 0 0 20px hsl(24 95% 53% / 0.25);
@@ -137,6 +140,30 @@
   
   .gradient-cta {
     background: var(--gradient-cta);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Gradient text effect */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
   .shadow-soft {
