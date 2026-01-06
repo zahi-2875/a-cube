@@ -3,7 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { ArrowRight, Users, Calendar, BookOpen, Shield, Sparkles, Heart } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/bg-home-hero.jpg";
 
 const features = [
   {
@@ -41,10 +41,10 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-transparent" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">

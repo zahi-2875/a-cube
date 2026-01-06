@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
 import { Users, Target, Heart, Award, ArrowRight } from "lucide-react";
+import aboutBg from "@/assets/bg-about.jpg";
 
 const values = [
   {
@@ -63,8 +64,13 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 md:py-28 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${aboutBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               About A-Cube

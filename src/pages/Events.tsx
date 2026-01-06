@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, ArrowRight, DollarSign, Gift } from "lucide-react";
+import eventsBg from "@/assets/bg-events.jpg";
 
 const eventTypes = [
   {
@@ -129,8 +130,13 @@ const Events = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 md:py-28 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${eventsBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               Events & Programs
