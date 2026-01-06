@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Heart, Users, Calendar, Megaphone, ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import volunteerBg from "@/assets/bg-contact.jpg";
 
 const opportunities = [
   { icon: Calendar, title: "Event Support", description: "Help organize and run our mental health events, workshops, and community gatherings." },
@@ -41,8 +42,13 @@ const Volunteer = () => {
 
   return (
     <Layout>
-      <section className="py-20 md:py-28 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${volunteerBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/80 to-background/70" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Heart className="w-12 h-12 text-primary mx-auto mb-6 animate-float" />
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">Volunteer With Us</h1>

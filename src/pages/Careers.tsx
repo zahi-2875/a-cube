@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, Heart, Users, Clock, Award, CheckCircle } from "lucide-react";
+import careersBg from "@/assets/bg-careers.jpg";
 
 const benefits = [
   { icon: Clock, title: "Flexible Schedule", description: "Set your own hours and work-life balance." },
@@ -34,8 +35,13 @@ const Careers = () => {
 
   return (
     <Layout>
-      <section className="py-20 md:py-28 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${careersBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/75 to-background/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6 animate-fade-up">Join Our Team</h1>
             <p className="text-lg text-muted-foreground mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>Are you a passionate mental health professional looking to make a difference?</p>
