@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calendar, Video, Clock, User, Mail, Lock, ArrowRight } from "lucide-react";
+import psychologistBg from "@/assets/bg-psychologists.jpg";
 
 const features = [
   {
@@ -35,7 +36,12 @@ const PsychologistPortal = () => {
     <Layout showFooter={false}>
       <div className="min-h-[calc(100vh-5rem)] flex">
         {/* Left Panel - Features */}
-        <div className="hidden lg:flex lg:w-1/2 bg-primary p-12 flex-col justify-center relative overflow-hidden">
+        <div className="hidden lg:flex lg:w-1/2 p-12 flex-col justify-center relative overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${psychologistBg})` }}
+          />
+          <div className="absolute inset-0 bg-primary/85" />
           {/* Background decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />

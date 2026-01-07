@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Heart, Users, Calendar, Megaphone, ArrowRight, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import volunteerBg from "@/assets/bg-contact.jpg";
+import volunteerBg from "@/assets/bg-careers.jpg";
 
 const opportunities = [
   { icon: Calendar, title: "Event Support", description: "Help organize and run our mental health events, workshops, and community gatherings." },
