@@ -1,11 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import contactBg from "@/assets/bg-contact.jpg";
 
 const Privacy = () => {
   return (
     <Layout>
-      <section className="py-20 md:py-28 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${contactBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/70" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               Privacy Policy

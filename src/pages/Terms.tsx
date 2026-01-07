@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FileText, Shield, Users, AlertCircle, Scale, Mail } from "lucide-react";
+import contactBg from "@/assets/bg-contact.jpg";
 
 const sections = [
   {
@@ -155,8 +156,13 @@ const Terms = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 md:py-24 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${contactBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/70" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
               <Scale className="w-4 h-4" />
