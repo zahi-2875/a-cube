@@ -155,7 +155,7 @@ const Index = () => {
               Join thousands who have found support, growth, and healing with A-Cube. Your well-being matters.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/services">
+              <Link to="/book-session">
                 <Button variant="secondary" size="lg" className="shadow-elevated hover:shadow-soft">
                   Book a Session
                   <ArrowRight className="w-5 h-5" />
