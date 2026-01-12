@@ -23,8 +23,8 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
-              <a href="mailto:hello@a-cube.com" className="text-muted-foreground hover:text-primary transition-colors">
-                hello@a-cube.com
+              <a href="mailto:asmho2728@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                asmho2728@gmail.com
               </a>
             </div>
 
@@ -33,8 +33,8 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
-              <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                +1 (234) 567-890
+              <a href="tel:+917893982875" className="text-muted-foreground hover:text-primary transition-colors">
+                +91 7893982875
               </a>
             </div>
 
@@ -44,7 +44,7 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
               </div>
               <h3 className="font-semibold text-foreground mb-2">Visit Us</h3>
               <p className="text-muted-foreground">
-                123 Wellness Street<br />San Francisco, CA 94102
+                Bangalore, India
               </p>
             </div>
           </div>

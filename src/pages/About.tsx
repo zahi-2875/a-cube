@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Link } from "react-router-dom";
-import { Users, Target, Heart, Award, ArrowRight } from "lucide-react";
+import { Users, Target, Heart, Award, ArrowRight, Linkedin } from "lucide-react";
 import aboutBg from "@/assets/bg-about.jpg";
 
 const values = [
@@ -30,24 +30,28 @@ const values = [
 
 const team = [
   {
-    name: "Dr. Sarah Mitchell",
-    role: "Founder & Clinical Director",
-    bio: "20+ years experience in clinical psychology with a focus on trauma-informed care.",
+    name: "Zahira Shaik",
+    role: "Founder and Writer",
+    bio: "Passionate about mental health advocacy and creating meaningful content that inspires healing.",
+    linkedin: "https://linkedin.com/in/zahira-shaik",
   },
   {
-    name: "Dr. James Chen",
-    role: "Head of Group Therapy",
-    bio: "Specialist in group dynamics and community mental health initiatives.",
+    name: "Mohan Gola",
+    role: "Financial Advisor",
+    bio: "Ensuring sustainable growth and financial stability for our non-profit mission.",
+    linkedin: "https://linkedin.com/in/mohan-gola",
   },
   {
-    name: "Dr. Emily Rodriguez",
-    role: "Lead Psychologist",
-    bio: "Expert in cognitive behavioral therapy and anxiety disorders.",
+    name: "Abhishek K",
+    role: "CTO",
+    bio: "Building technology solutions that make mental health support accessible to everyone.",
+    linkedin: "https://linkedin.com/in/abhishek-k",
   },
   {
-    name: "Michael Thompson",
-    role: "Events Director",
-    bio: "Passionate about creating meaningful mental health awareness programs.",
+    name: "V",
+    role: "Mentor",
+    bio: "Guiding our team with wisdom and experience in community-driven mental health initiatives.",
+    linkedin: "https://linkedin.com/in/v-mentor",
   },
 ];
 
@@ -146,7 +150,15 @@ const About = () => {
                     </span>
                   </div>
                   <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-sm text-primary mb-3">{member.role}</p>
+                  <p className="text-sm text-primary mb-2">{member.role}</p>
+                  <a 
+                    href={member.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 mb-3"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
                   <p className="text-sm text-muted-foreground">{member.bio}</p>
                 </div>
               </ScrollReveal>
