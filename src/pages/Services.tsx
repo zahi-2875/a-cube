@@ -215,7 +215,7 @@ const Services = () => {
                       <p className="text-sm text-muted-foreground">{service.whatToExpect}</p>
                     </div>
 
-                    <Link to="/#contact">
+                    <Link to="/book-session">
                       <Button variant="hero" className="w-full">
                         Get Started
                         <ArrowRight className="w-4 h-4" />
@@ -269,9 +269,9 @@ const Services = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Reach out to our caring team for a free consultation. We're here to listen, understand your needs, and help you find the right support for your journey toward wellness.
             </p>
-            <Link to="/#contact">
+            <Link to="/book-session">
               <Button variant="hero" size="lg">
-                Contact Us Today
+                Book a Session
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
