@@ -31,27 +31,27 @@ const values = [
 const team = [
   {
     name: "Zahira Shaik",
-    role: "Founder and Writer",
-    bio: "Passionate about mental health advocacy and creating meaningful content that inspires healing.",
+    role: "Founder and CEO",
+    bio: "Passionate about mental health advocacy and leading A-Cube's mission to make psychological care accessible to everyone.",
     linkedin: "https://linkedin.com/in/zahira-shaik",
   },
   {
     name: "Mohan Gola",
-    role: "Financial Advisor",
-    bio: "Ensuring sustainable growth and financial stability for our non-profit mission.",
+    role: "CTO and Financial Advisor",
+    bio: "Driving technology innovation and ensuring sustainable growth for our non-profit mission.",
     linkedin: "https://linkedin.com/in/mohan-gola",
-  },
-  {
-    name: "Abhishek K",
-    role: "CTO",
-    bio: "Building technology solutions that make mental health support accessible to everyone.",
-    linkedin: "https://linkedin.com/in/abhishek-k",
   },
   {
     name: "V",
     role: "Mentor",
     bio: "Guiding our team with wisdom and experience in community-driven mental health initiatives.",
     linkedin: "https://linkedin.com/in/v-mentor",
+  },
+  {
+    name: "Sujay Krishna",
+    role: "Community Manager",
+    bio: "Building and nurturing our community through meaningful engagement and outreach initiatives.",
+    linkedin: "https://linkedin.com/in/sujay-krishna",
   },
 ];
 
