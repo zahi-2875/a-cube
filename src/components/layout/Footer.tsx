@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Mail, Phone, MapPin, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Heart, Mail, Phone, MapPin, Instagram, Linkedin } from "lucide-react";
 import { forwardRef } from "react";
 
 export const Footer = forwardRef<HTMLElement>((_, ref) => {
@@ -68,10 +68,13 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
                 Supporting mental wellness through compassionate care and community.
               </p>
               <div className="flex gap-3">
-                {[Instagram, Linkedin, Youtube].map((Icon, i) => (
+                {[
+                  { Icon: Instagram, href: "#" },
+                  { Icon: Linkedin, href: "#" },
+                ].map(({ Icon, href }, i) => (
                   <a
                     key={i}
-                    href="#"
+                    href={href}
                     className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-gradient-to-r hover:from-primary hover:to-primary/80 hover:text-primary-foreground transition-all duration-300 hover:scale-110"
                   >
                     <Icon className="w-4 h-4" />

@@ -2,6 +2,7 @@ import { useState, forwardRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -47,6 +48,7 @@ export const Navbar = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <Link to="/volunteer">
               <Button variant="outline" size="sm">
                 Volunteer
@@ -88,6 +90,10 @@ export const Navbar = forwardRef<HTMLElement>((_, ref) => {
                 </Link>
               ))}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
+                <div className="flex items-center justify-between px-4 py-2">
+                  <span className="text-sm text-muted-foreground">Dark Mode</span>
+                  <ThemeToggle />
+                </div>
                 <Link to="/volunteer" onClick={() => setIsOpen(false)}>
                   <Button variant="outline" className="w-full">
                     Volunteer
