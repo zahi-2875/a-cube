@@ -12,6 +12,7 @@ import Events from "./pages/Events";
 import Blogs from "./pages/Blogs";
 import Careers from "./pages/Careers";
 import PsychologistPortal from "./pages/PsychologistPortal";
+import Community from "./pages/Community";
 import Volunteer from "./pages/Volunteer";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/psychologist-portal" element={<PsychologistPortal />} />
+          <Route path="/community" element={<Community />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
