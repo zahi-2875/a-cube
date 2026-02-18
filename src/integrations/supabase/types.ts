@@ -111,6 +111,33 @@ export type Database = {
           },
         ]
       }
+      community_posts: {
+        Row: {
+          created_at: string
+          id: string
+          likes: number
+          message: string
+          name: string
+          occupation: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          likes?: number
+          message: string
+          name: string
+          occupation: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          likes?: number
+          message?: string
+          name?: string
+          occupation?: string
+        }
+        Relationships: []
+      }
       payments: {
         Row: {
           amount: number

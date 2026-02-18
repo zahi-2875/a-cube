@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Events", path: "/events" },
   { name: "Blogs", path: "/blogs" },
   { name: "Careers", path: "/careers" },
+  { name: "Community", path: "/community" },
 ];
 
 export const Navbar = forwardRef<HTMLElement>((_, ref) => {
