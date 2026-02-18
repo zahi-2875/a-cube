@@ -1,8 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, ArrowRight, DollarSign, Gift } from "lucide-react";
+import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, DollarSign, Gift } from "lucide-react";
 import eventsBg from "@/assets/bg-events.jpg";
 
 const eventTypes = [
@@ -12,8 +11,7 @@ const eventTypes = [
     title: "Panel Discussions",
     description: "Engage with expert psychologists discussing critical mental health topics.",
     type: "Paid",
-    price: "From $25",
-    schedule: "Monthly",
+    price: "₹499",
     features: ["Live Q&A sessions", "Expert panel of 3-5 psychologists", "Recorded for later viewing", "Certificate of attendance"],
   },
   {
@@ -22,8 +20,7 @@ const eventTypes = [
     title: "Psychologist Meetups",
     description: "Networking events for mental health professionals to connect and collaborate.",
     type: "Paid",
-    price: "From $15",
-    schedule: "Bi-monthly",
+    price: "₹399",
     features: ["Professional networking", "Case study discussions", "Peer supervision opportunities", "Industry updates"],
   },
   {
@@ -32,8 +29,7 @@ const eventTypes = [
     title: "Seminars & Workshops",
     description: "In-depth educational sessions on specific mental health topics and techniques.",
     type: "Paid",
-    price: "From $50",
-    schedule: "Weekly",
+    price: "Online: ₹199 | Offline: ₹299",
     features: ["Interactive learning", "Practical exercises", "Take-home materials", "Small group format"],
   },
   {
@@ -43,7 +39,6 @@ const eventTypes = [
     description: "Free, community-led discussions in a safe and supportive environment.",
     type: "Free",
     price: "Free",
-    schedule: "Weekly",
     features: ["Open to everyone", "Peer support format", "Various topics", "No registration needed"],
   },
   {
@@ -53,7 +48,6 @@ const eventTypes = [
     description: "Join our collaborative book writing projects sharing mental health insights.",
     type: "Free",
     price: "Free",
-    schedule: "Ongoing",
     features: ["Collaborative authorship", "Publishing opportunities", "Writer community", "Expert guidance"],
   },
   {
@@ -63,39 +57,7 @@ const eventTypes = [
     description: "Virtual gaming sessions to build community and reduce stress together.",
     type: "Free",
     price: "Free",
-    schedule: "Weekly",
     features: ["Casual gaming environment", "Community building", "Stress relief", "All skill levels welcome"],
-  },
-];
-
-const upcomingEvents = [
-  {
-    title: "Understanding Anxiety: Expert Panel",
-    date: "January 15, 2025",
-    time: "7:00 PM EST",
-    type: "Panel Discussion",
-    price: "$25",
-  },
-  {
-    title: "Mindfulness Workshop for Beginners",
-    date: "January 18, 2025",
-    time: "10:00 AM EST",
-    type: "Workshop",
-    price: "$50",
-  },
-  {
-    title: "Open Circle: New Year, New Mindset",
-    date: "January 20, 2025",
-    time: "6:00 PM EST",
-    type: "Open Circle",
-    price: "Free",
-  },
-  {
-    title: "Gaming Night: Community Connect",
-    date: "January 22, 2025",
-    time: "8:00 PM EST",
-    type: "Gaming Night",
-    price: "Free",
   },
 ];
 
@@ -187,10 +149,8 @@ const Events = () => {
                     {event.description}
                   </p>
                   
-                  <div className="text-xs text-primary font-medium mb-4">
-                    Schedule: {event.schedule}
-                  </div>
-                  
+
+
                   <ul className="space-y-2">
                     {event.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -206,48 +166,7 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Upcoming Events */}
-      <section className="py-20 md:py-28 bg-card border-y border-border">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-                Upcoming Events
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Don't miss out on our upcoming programs. Register today to secure your spot.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {upcomingEvents.map((event, index) => (
-              <ScrollReveal key={index} delay={index * 80}>
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-6 rounded-xl bg-background border border-border card-hover">
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">{event.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {event.date} • {event.time}
-                    </p>
-                    <span className="inline-block mt-2 text-xs text-primary font-medium">
-                      {event.type}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className={`font-semibold ${event.price === "Free" ? "text-green-600" : "text-foreground"}`}>
-                      {event.price}
-                    </span>
-                    <Button variant="outline" size="sm">
-                      Register
-                      <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* FAQs */}
       <section className="py-20 md:py-28">
