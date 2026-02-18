@@ -197,27 +197,6 @@ const Blogs = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Subscribe to our newsletter for the latest mental health insights, tips, and resources delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all duration-200"
-              />
-              <Button variant="hero">Subscribe</Button>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
     </Layout>
   );
 };

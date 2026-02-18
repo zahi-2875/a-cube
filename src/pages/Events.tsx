@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, DollarSign, Gift } from "lucide-react";
+import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, Gift } from "lucide-react";
 import eventsBg from "@/assets/bg-events.jpg";
 
 const eventTypes = [
@@ -137,7 +137,7 @@ const Events = () => {
                         ? "bg-green-100 text-green-700" 
                         : "bg-accent text-accent-foreground"
                     }`}>
-                      {event.type === "Free" ? <Gift className="w-3 h-3" /> : <DollarSign className="w-3 h-3" />}
+                      {event.type === "Free" && <Gift className="w-3 h-3" />}
                       {event.price}
                     </span>
                   </div>
