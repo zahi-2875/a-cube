@@ -69,8 +69,8 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
               </p>
               <div className="flex gap-3">
                 {[
-                  { Icon: Instagram, href: "#" },
-                  { Icon: Linkedin, href: "#" },
+                  { Icon: Instagram, href: "https://www.instagram.com/a_cubewellbeing/" },
+                  { Icon: Linkedin, href: "https://www.linkedin.com/company/aasiya-mental-health-organization/" },
                 ].map(({ Icon, href }, i) => (
                   <a
                     key={i}

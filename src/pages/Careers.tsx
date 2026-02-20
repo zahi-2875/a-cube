@@ -94,23 +94,15 @@ const Careers = () => {
 
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <ScrollReveal><div className="text-center mb-16"><h2 className="font-display text-3xl font-semibold text-foreground mb-4">Open Positions</h2></div></ScrollReveal>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {openPositions.map((p, i) => (
-              <ScrollReveal key={i} delay={i * 100}>
-                <div className="p-6 rounded-xl bg-card border border-border card-hover">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                      <h3 className="font-semibold text-foreground text-lg mb-1">{p.title}</h3>
-                      <p className="text-sm text-primary mb-2">{p.type} • {p.location}</p>
-                      <p className="text-sm text-muted-foreground">{p.description}</p>
-                    </div>
-                    <Button variant="outline" size="sm" className="flex-shrink-0">Apply Now<ArrowRight className="w-4 h-4" /></Button>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal>
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="font-display text-3xl font-semibold text-foreground mb-4">Opportunities</h2>
+              <p className="text-muted-foreground mb-8">Visit our LinkedIn page for current openings and career opportunities.</p>
+              <a href="https://www.linkedin.com/company/aasiya-mental-health-organization/" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="lg">Visit Our LinkedIn Page<ArrowRight className="w-5 h-5" /></Button>
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
