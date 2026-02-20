@@ -133,7 +133,7 @@ const Services = () => {
                 Our Mission
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                A-Cube is dedicated to breaking down barriers to mental health care. We believe that everyone deserves access to quality psychological support, and we work tirelessly to make that vision a reality. Through the generosity of our supporters and the dedication of our team, we provide services that prioritize healing over profit.
+                ACube is dedicated to breaking down barriers to mental health care. We believe that everyone deserves access to quality psychological support, and we work tirelessly to make that vision a reality. Through the generosity of our supporters and the dedication of our team, we provide services that prioritize healing over profit.
               </p>
             </div>
           </ScrollReveal>
@@ -235,7 +235,7 @@ const Services = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-                Why Choose A-Cube?
+                Why Choose ACube?
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 We prioritize your comfort, convenience, and healing above all else.
