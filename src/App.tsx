@@ -13,6 +13,7 @@ import Blogs from "./pages/Blogs";
 import Careers from "./pages/Careers";
 import PsychologistPortal from "./pages/PsychologistPortal";
 import Community from "./pages/Community";
+import CommunityAdmin from "./pages/CommunityAdmin";
 import Volunteer from "./pages/Volunteer";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/psychologist-portal" element={<PsychologistPortal />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/community-admin" element={<CommunityAdmin />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
