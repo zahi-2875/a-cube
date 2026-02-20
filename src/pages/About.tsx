@@ -33,25 +33,19 @@ const team = [
     name: "Zahira Shaik",
     role: "Founder and CEO",
     bio: "Passionate about mental health advocacy and leading A-Cube's mission to make psychological care accessible to everyone.",
-    linkedin: "https://linkedin.com/in/zahira-shaik",
+    linkedin: "https://www.linkedin.com/in/zahira-shaik-1ab213262/",
   },
   {
     name: "Mohan Gola",
     role: "CTO and Financial Advisor",
     bio: "Driving technology innovation and ensuring sustainable growth for our non-profit mission.",
-    linkedin: "https://linkedin.com/in/mohan-gola",
-  },
-  {
-    name: "V",
-    role: "Mentor",
-    bio: "Guiding our team with wisdom and experience in community-driven mental health initiatives.",
-    linkedin: "https://linkedin.com/in/v-mentor",
+    linkedin: "https://www.linkedin.com/in/mohan-k-gola/",
   },
   {
     name: "Sujay Krishna",
     role: "Community Manager",
     bio: "Building and nurturing our community through meaningful engagement and outreach initiatives.",
-    linkedin: "https://linkedin.com/in/sujay-krishna",
+    linkedin: "https://www.linkedin.com/in/sujay-velala-b87717333/",
   },
 ];
 
@@ -140,7 +134,7 @@ const About = () => {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {team.map((member, index) => (
               <ScrollReveal key={index} delay={index * 80}>
                 <div className="group p-6 rounded-2xl bg-background border border-border text-center card-hover h-full">

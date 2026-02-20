@@ -1,7 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, Gift } from "lucide-react";
+import { Calendar, Users, BookOpen, MessageCircle, Gamepad2, PenTool, Gift, ArrowRight } from "lucide-react";
 import eventsBg from "@/assets/bg-events.jpg";
 
 const eventTypes = [
@@ -151,7 +152,7 @@ const Events = () => {
                   
 
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mb-5">
                     {event.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -159,6 +160,9 @@ const Events = () => {
                       </li>
                     ))}
                   </ul>
+                  <a href="https://acube-well-being-121043491539.eventbrite.com" target="_blank" rel="noopener noreferrer">
+                    <Button variant="hero" size="sm" className="w-full">Register<ArrowRight className="w-4 h-4" /></Button>
+                  </a>
                 </div>
               </ScrollReveal>
             ))}
