@@ -28,7 +28,7 @@ const Privacy = () => {
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg max-w-none space-y-8">
               {[
-                { title: "Introduction", content: "At A-Cube, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services, website, and applications." },
+                { title: "Introduction", content: "At ACube, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services, website, and applications." },
                 { title: "Information We Collect", content: null, list: ["Personal Information: We may collect personal information such as your name, email address, phone number, and payment information.", "Health Information: In the course of providing therapy services, we may collect sensitive health information treated with the highest level of confidentiality.", "Usage Data: We automatically collect certain information about your device and usage patterns."] },
                 { title: "How We Use Your Information", content: null, bullets: ["To provide and maintain our therapy and mental health services", "To process transactions and send related information", "To send you updates about events, services, and resources", "To respond to your inquiries and provide customer support", "To improve our services and develop new features", "To comply with legal obligations"] },
                 { title: "Data Security", content: "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. All therapy sessions and communications are encrypted." },
@@ -52,8 +52,8 @@ const Privacy = () => {
                   <h2 className="font-display text-xl font-semibold text-foreground mb-4">Contact Us</h2>
                   <p className="text-muted-foreground mb-4">If you have any questions about this Privacy Policy, please contact us:</p>
                   <div className="space-y-1">
-                    <p className="text-foreground font-medium">A-Cube Privacy Team</p>
-                    <p className="text-muted-foreground">Email: privacy@a-cube.com</p>
+                    <p className="text-foreground font-medium">ACube Privacy Team</p>
+                    <p className="text-muted-foreground">Email: privacy@acube.com</p>
                     <p className="text-muted-foreground">Phone: +1 (234) 567-890</p>
                     <p className="text-muted-foreground">Address: 123 Wellness Street, San Francisco, CA 94102</p>
                   </div>

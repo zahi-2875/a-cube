@@ -8,7 +8,7 @@ const sections = [
     id: "acceptance",
     icon: FileText,
     title: "1. Acceptance of Terms",
-    content: `By accessing and using the A-Cube platform ("Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+    content: `By accessing and using the ACube platform ("Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of these terms, you may not access the Service.
 
 These Terms apply to all visitors, users, and others who access or use the Service, including but not limited to clients seeking mental health services, psychologists providing services, volunteers, and general visitors.
 
@@ -18,7 +18,7 @@ By creating an account or using our services, you confirm that you are at least 
     id: "services",
     icon: Users,
     title: "2. Description of Services",
-    content: `A-Cube provides a platform connecting individuals with licensed mental health professionals for therapy services, including:
+    content: `ACube provides a platform connecting individuals with licensed mental health professionals for therapy services, including:
 
 • One-on-one therapy sessions (in-person and telehealth)
 • Group therapy sessions
@@ -83,17 +83,17 @@ Cancellation and refund policy:
 • Maintain professional liability insurance
 • Comply with all applicable laws and regulations
 
-A-Cube serves as a platform connecting clients with independent psychologists. Psychologists are independent contractors, not employees of A-Cube.`
+ACube serves as a platform connecting clients with independent psychologists. Psychologists are independent contractors, not employees of ACube.`
   },
   {
     id: "volunteers",
     icon: Users,
     title: "7. Volunteer Terms",
-    content: `Volunteers participating in A-Cube programs agree to:
+    content: `Volunteers participating in ACube programs agree to:
 • Complete required training and background checks
 • Maintain confidentiality of all sensitive information
 • Follow organizational policies and procedures
-• Represent A-Cube professionally in all activities
+• Represent ACube professionally in all activities
 • Immediately report any concerns or incidents
 
 Volunteer participation is at-will and may be terminated by either party at any time.`
@@ -102,7 +102,7 @@ Volunteer participation is at-will and may be terminated by either party at any 
     id: "intellectual-property",
     icon: FileText,
     title: "8. Intellectual Property",
-    content: `The Service and its original content, features, and functionality are owned by A-Cube and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+    content: `The Service and its original content, features, and functionality are owned by ACube and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
 
 You may not:
 • Copy, modify, or distribute our content without permission
@@ -114,7 +114,7 @@ You may not:
     id: "limitation",
     icon: AlertCircle,
     title: "9. Limitation of Liability",
-    content: `To the maximum extent permitted by law, A-Cube shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:
+    content: `To the maximum extent permitted by law, ACube shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:
 
 • Your use or inability to use the Service
 • Any unauthorized access to your data
@@ -141,11 +141,11 @@ Your continued use of the Service after changes become effective constitutes acc
     title: "11. Contact Information",
     content: `If you have any questions about these Terms and Conditions, please contact us:
 
-A-Cube
+ACube
 123 Wellness Street
 San Francisco, CA 94102
 
-Email: legal@a-cube.com
+Email: legal@acube.com
 Phone: +1 (234) 567-890
 
 For mental health emergencies, please contact your local emergency services or the National Suicide Prevention Lifeline at 988.`
@@ -229,7 +229,7 @@ const Terms = () => {
             {/* Agreement Notice */}
             <div className="mt-12 p-6 rounded-2xl bg-primary/5 border border-primary/20">
               <p className="text-sm text-foreground">
-                <strong>By using A-Cube services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong> If you have any questions or concerns, please contact us before using our services.
+                <strong>By using ACube services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong> If you have any questions or concerns, please contact us before using our services.
               </p>
             </div>
           </div>

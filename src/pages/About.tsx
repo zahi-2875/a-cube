@@ -32,7 +32,7 @@ const team = [
   {
     name: "Zahira Shaik",
     role: "Founder and CEO",
-    bio: "Passionate about mental health advocacy and leading A-Cube's mission to make psychological care accessible to everyone.",
+    bio: "Passionate about mental health advocacy and leading ACube's mission to make psychological care accessible to everyone.",
     linkedin: "https://www.linkedin.com/in/zahira-shaik-1ab213262/",
   },
   {
@@ -71,7 +71,7 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6 animate-fade-up opacity-0" style={{ animationDelay: "0s", animationFillMode: "forwards" }}>
-              About A-Cube
+              About ACube
             </h1>
             <p className="text-lg text-muted-foreground animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}>
               We are a dedicated team of mental health professionals committed to making quality psychological care accessible to everyone. Our mission is to destigmatize mental health and create a world where seeking help is celebrated.
@@ -90,7 +90,7 @@ const About = () => {
                   Our Mission
                 </h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  At A-Cube, we believe that mental wellness is fundamental to living a fulfilling life. Our mission is to provide compassionate, accessible, and evidence-based mental health services that empower individuals to overcome challenges and thrive.
+                  At ACube, we believe that mental wellness is fundamental to living a fulfilling life. Our mission is to provide compassionate, accessible, and evidence-based mental health services that empower individuals to overcome challenges and thrive.
                 </p>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   Founded in 2018, we have grown from a small practice to a comprehensive mental health platform, serving thousands of individuals through therapy, community events, and educational resources.

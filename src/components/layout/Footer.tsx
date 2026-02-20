@@ -61,7 +61,7 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
                   <Heart className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <span className="font-display text-xl font-semibold text-foreground">
-                  A-Cube
+                  ACube
                 </span>
               </Link>
               <p className="text-muted-foreground text-sm mb-6">
@@ -113,7 +113,7 @@ export const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           <div className="border-t border-border mt-12 pt-8 text-center">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} A-Cube. All rights reserved.
+              © {new Date().getFullYear()} ACube. All rights reserved.
             </p>
           </div>
         </div>
